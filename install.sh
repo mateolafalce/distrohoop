@@ -7,6 +7,9 @@ then
     exit 1
 fi
 
+# Change to the project directory
+cd "$(dirname "$0")/distrohoop"
+
 # Compile the project
 cargo build --release
 
