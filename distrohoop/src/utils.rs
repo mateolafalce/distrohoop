@@ -163,6 +163,7 @@ pub fn play_animation() -> Result<()> {
             sleep(Duration::from_millis(100));
         }
     }
+    execute!(stdout, Clear(ClearType::All))?;
     execute!(stdout, ResetColor)?;
     Ok(())
     }
