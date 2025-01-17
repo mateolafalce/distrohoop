@@ -1,14 +1,9 @@
-use utils::play_animation;
 
 mod distros;
 mod utils;
 
 
 fn main() {
-
-    let vec = distros::get_distros();
-
-    play_animation(&vec);
-
+    utils::play_animation();
     print!("Executed successfully!")
 }
