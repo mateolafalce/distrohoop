@@ -48,13 +48,13 @@ pub fn get_distros() -> Vec<Distro> {
         Distro {
             name: "Gentoo".to_string(),
             description: "Gentoo is a flexible and source-based Linux distribution. Have fun compling stuff for hours haha!".to_string(),
-            color: Color::BrightCyan,
+            color: Color::Magenta,
             is_bold: true,
         },
         Distro {
             name: "Void Linux".to_string(),
             description: "Void Linux is an independent Linux distribution focused on simplicity. Extra points because this one sounds really cool".to_string(),
-            color: Color::Black,
+            color: Color::Green,
             is_bold: true,
         },
         Distro {

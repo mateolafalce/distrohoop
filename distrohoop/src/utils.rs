@@ -119,17 +119,20 @@ pub fn play_animation() -> Result<()> {
             // Display the messages
             if message.contains('\n') {
                 let parts: Vec<&str> = message.split('\n').collect();
+                let part0_x = (cols as i16 / 2 - parts[0].len() as i16 / 2).max(0) as u16;
+                let part1_x = (cols as i16 / 2 - parts[1].len() as i16 / 2).max(0) as u16;
                 execute!(
                     stdout,
-                    cursor::MoveTo(cols / 2 - (parts[0].len() as u16 / 2), rows / 2),
+                    cursor::MoveTo(part0_x, rows / 2),
                     Print(parts[0]),
-                    cursor::MoveTo(cols / 2 - (parts[1].len() as u16 / 2), rows / 2 + 1),
+                    cursor::MoveTo(part1_x, rows / 2 + 1),
                     Print(parts[1])
                 )?;
             } else {
+                let message_x = (cols as i16 / 2 - message.len() as i16 / 2).max(0) as u16;
                 execute!(
                     stdout,
-                    cursor::MoveTo(cols / 2 - (message.len() as u16 / 2), rows / 2),
+                    cursor::MoveTo(message_x, rows / 2),
                     Print(message)
                 )?;
             }
