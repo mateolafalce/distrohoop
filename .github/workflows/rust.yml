@@ -6,7 +6,7 @@ on:
       - published
 
 jobs:
-  build:
+  build-linux:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,13 +22,17 @@ jobs:
         working-directory: ./distrohoop
         run: cargo build --release
 
-      - name: Upload binaries
+      - name: Verify binary
+        run: ls -la ./distrohoop/target/release/
+
+      - name: Upload Linux binary
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ./distrohoop/target/release/distrohoop
           asset_name: distrohoop-linux-x64
           asset_content_type: application/octet-stream
+          token: ${{ secrets.GH_TOKEN }}
 
   build-windows:
     runs-on: windows-latest
@@ -46,13 +50,17 @@ jobs:
         working-directory: ./distrohoop
         run: cargo build --release
 
-      - name: Upload binaries
+      - name: Verify binary
+        run: dir ./distrohoop/target/release/
+
+      - name: Upload Windows binary
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ./distrohoop/target/release/distrohoop.exe
           asset_name: distrohoop-windows-x64.exe
           asset_content_type: application/octet-stream
+          token: ${{ secrets.GH_TOKEN }}
 
   build-macos:
     runs-on: macos-latest
@@ -70,10 +78,14 @@ jobs:
         working-directory: ./distrohoop
         run: cargo build --release
 
-      - name: Upload binaries
+      - name: Verify binary
+        run: ls -la ./distrohoop/target/release/
+
+      - name: Upload macOS binary
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ./distrohoop/target/release/distrohoop
           asset_name: distrohoop-macos-x64
           asset_content_type: application/octet-stream
+          token: ${{ secrets.GH_TOKEN }}
