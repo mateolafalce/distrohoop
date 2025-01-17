@@ -33,6 +33,10 @@ Or use the `install.sh` script to build and automatically move the binary file t
 ### From the AUR
 
 For Arch Linux users, you can install distroHoop from the AUR:
+```sh
+yay -S distrohoop-bin
+```
+- or if you want to compile form source:
 
 ```sh
 yay -S distrohoop
