@@ -1,24 +1,79 @@
-name: Rust
+name: Release Binaries
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-env:
-  CARGO_TERM_COLOR: always
+  release:
+    types:
+      - published
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build
-      working-directory: ./distrohoop
-      run: cargo build --verbose
-    - name: Run tests
-      working-directory: ./distrohoop
-      run: cargo test --verbose
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable 
+
+      - name: Build binary
+        working-directory: ./distrohoop
+        run: cargo build --release
+
+      - name: Upload binaries
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./distrohoop/target/release/distrohoop
+          asset_name: distrohoop-linux-x64
+          asset_content_type: application/octet-stream
+
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Build binary
+        working-directory: ./distrohoop
+        run: cargo build --release
+
+      - name: Upload binaries
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./distrohoop/target/release/distrohoop.exe
+          asset_name: distrohoop-windows-x64.exe
+          asset_content_type: application/octet-stream
+
+  build-macos:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Build binary
+        working-directory: ./distrohoop
+        run: cargo build --release
+
+      - name: Upload binaries
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./distrohoop/target/release/distrohoop
+          asset_name: distrohoop-macos-x64
+          asset_content_type: application/octet-stream
