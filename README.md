@@ -6,9 +6,15 @@ distroHoop is a CLI tool written in Rust that helps you determine your next Linu
     <img src="/img/intro.png" alt="Intro Image" width="600">
 </div>
 
-## 🛠️ Installation 🛠️
+## 🛠️ Installation
 
-To install distroHoop, you need to have Rust and Cargo installed on your system. You can install Rust and Cargo by following the instructions on the [official Rust website](https://www.rust-lang.org/tools/install).
+### Download a Binary
+
+Visit the [releases page](https://github.com/br0sinski/distrohoop/releases) and download a binary for your system.
+
+### Build from Source
+
+To build from source, you need to have Rust and Cargo installed on your system. You can install Rust and Cargo by following the instructions on the [official Rust website](https://www.rust-lang.org/tools/install).
 
 Clone the repository and build the project:
 
@@ -18,33 +24,84 @@ cd distrohoop
 cargo build --release
 ```
 
-## Usage
+Or use the `install.sh` script to build and automatically move the binary file to `/usr/local/bin`:
 
-Run the distrohoop CLI tool:
+```sh
+./install.sh
+```
+
+### From the AUR
+
+For Arch Linux users, you can install distroHoop from the AUR:
+
+```sh
+yay -S distrohoop
+```
+
+or
+
+```sh
+git clone https://aur.archlinux.org/distrohoop.git
+cd distrohoop
+makepkg -si
+```
+
+## 🚀 Usage
+
+### If downloaded from the AUR / used the install script
+```sh
+distrohoop
+```
+
+### If You Downloaded a Binary
+
+#### Linux
+
+In a terminal, navigate to the directory where you downloaded the binary file and run:
+
+```sh
+./distrohoop
+```
+
+#### Windows
+
+Simply open the `.exe` file or run in a terminal:
+
+```sh
+./distrohoop.exe
+```
+
+#### macOS
+
+In a terminal, navigate to the directory where you downloaded the binary file and run:
+
+```sh
+./distrohoop
+```
+
+### If Compiled from Source
+
+Run the distroHoop CLI tool:
 
 ```sh
 cargo run --release
 ```
 
-## Example Output
+## 📊 Example Output
 
 <div align="center">
-    <img src="/img/example.gif" alt="Intro Image" width="600">
+    <img src="/img/example.gif" alt="Example Output" width="600">
 </div>
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request if you have any improvements or new features to suggest.
 
-## 📄 License 📄
+## 📄 License
 
-This project is licensed under the MIT License. See the 
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-LICENSE
-
- file for details.
-
-## Acknowledgements
+## 🙏 Acknowledgements
 
 - [colored](https://github.com/mackwic/colored) for terminal text coloring
 - [crossterm](https://github.com/crossterm-rs/crossterm) for cross-platform terminal manipulation
