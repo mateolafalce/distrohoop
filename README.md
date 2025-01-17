@@ -2,7 +2,9 @@
 
 DistroHoop is a CLI tool written in Rust that helps you determine your next Linux distribution. It uses the mighty force of the RNG to determine where to hop on next!
 
-<img src="/img/intro.png" alt="Example Output" align="center" width="600">
+<div align="center">
+    <img src="/img/intro.png" alt="Intro Image" width="600">
+</div>
 
 ## Installation
 
@@ -26,7 +28,9 @@ cargo run --release
 
 ## Example Output
 
-<img src="/img/example.gif" alt="Example Output" width="600" align="center">
+<div align="center">
+    <img src="/img/example.gif" alt="Intro Image" width="600">
+</div>
 
 ## Contributing
 
