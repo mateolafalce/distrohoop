@@ -1,14 +1,14 @@
-# DistroHoop
+# 🐧 distrohoop 🐧
 
-DistroHoop is a CLI tool written in Rust that helps you determine your next Linux distribution. It uses the mighty force of the RNG to determine where to hop on next!
+distroHoop is a CLI tool written in Rust that helps you determine your next Linux distribution. It uses the mighty force of the RNG to determine where to hop on next!
 
 <div align="center">
     <img src="/img/intro.png" alt="Intro Image" width="600">
 </div>
 
-## Installation
+## 🛠️ Installation 🛠️
 
-To install DistroHoop, you need to have Rust and Cargo installed on your system. You can install Rust and Cargo by following the instructions on the [official Rust website](https://www.rust-lang.org/tools/install).
+To install distroHoop, you need to have Rust and Cargo installed on your system. You can install Rust and Cargo by following the instructions on the [official Rust website](https://www.rust-lang.org/tools/install).
 
 Clone the repository and build the project:
 
@@ -20,7 +20,7 @@ cargo build --release
 
 ## Usage
 
-Run the DistroHoop CLI tool:
+Run the distrohoop CLI tool:
 
 ```sh
 cargo run --release
@@ -36,7 +36,7 @@ cargo run --release
 
 Contributions are welcome! Please open an issue or submit a pull request if you have any improvements or new features to suggest.
 
-## License
+## 📄 License 📄
 
 This project is licensed under the MIT License. See the 
 
