@@ -20,4 +20,5 @@ jobs:
       working-directory: ./distrohoop
       run: cargo build --verbose
     - name: Run tests
+      working-directory: ./distrohoop
       run: cargo test --verbose
