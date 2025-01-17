@@ -35,7 +35,7 @@ jobs:
           asset_path: ./distrohoop/target/release/distrohoop
           asset_name: distrohoop-linux-x64
           asset_content_type: application/octet-stream
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.RELEASE_TOKEN }}
 
   build-windows:
     runs-on: windows-latest
@@ -63,7 +63,7 @@ jobs:
           asset_path: ./distrohoop/target/release/distrohoop.exe
           asset_name: distrohoop-windows-x64.exe
           asset_content_type: application/octet-stream
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.RELEASE_TOKEN }}
 
   build-macos:
     runs-on: macos-latest
@@ -91,4 +91,4 @@ jobs:
           asset_path: ./distrohoop/target/release/distrohoop
           asset_name: distrohoop-macos-x64
           asset_content_type: application/octet-stream
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.RELEASE_TOKEN }}
